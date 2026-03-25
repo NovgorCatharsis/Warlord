@@ -1,0 +1,14 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/main.uss?fileID=7433441132597879392&amp;guid=bc35314d8151b4a42a452b25cbf28b2f&amp;type=3#main"/>
+    <ui:VisualElement name="container" style="flex-grow: 1; align-items: auto; align-content: auto; justify-content: flex-start; align-self: auto;">
+        <ui:VisualElement name="Header" style="flex-grow: 1; width: 1920px; height: 50%; align-content: flex-start; align-items: flex-start; justify-content: flex-start; align-self: auto; flex-direction: row;">
+            <ui:Label text="Coins: XX" name="coinsLabel" class="headerText"/>
+            <ui:Label text="Recruits: XX" name="recruitsLabel" class="headerText"/>
+            <ui:Label text="Morale: XX" name="moraleLabel" class="headerText"/>
+            <ui:Label text="Corpses: XX" name="corpsesLabel" class="headerText"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="Footer" style="flex-grow: 1; width: 1920px; height: 50%; align-content: auto; align-self: auto; justify-content: flex-end; align-items: flex-end; flex-direction: row;">
+            <ui:Button text="Turn" name="turnSkipButton" style="height: 84px; align-self: auto; width: 310px; align-items: auto; justify-content: flex-start; align-content: auto;"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

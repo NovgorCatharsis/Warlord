@@ -1,0 +1,12 @@
+:root {
+}
+
+.headerText {
+    font-size: 36px;
+    color: rgb(255, 255, 255);
+    align-content: auto;
+    align-items: auto;
+    justify-content: flex-start;
+    align-self: auto;
+    padding-left: 30px;
+}
