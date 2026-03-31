@@ -1,6 +1,40 @@
 :root {
 }
 
+.iconButton {
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.buttonContainer {
+    scale: 1 1;
+}
+
+.buttonContainer:hover {
+    scale: 1.2 1.2;
+}
+
+.panelText {
+    font-size: 48px;
+    color: rgb(255, 255, 255);
+}
+
+.panelBackground {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-top-width: 10px;
+    border-right-width: 10px;
+    border-bottom-width: 10px;
+    border-left-width: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+}
+
 .headerText {
     font-size: 36px;
     color: rgb(255, 255, 255);
@@ -9,4 +43,8 @@
     justify-content: flex-start;
     align-self: auto;
     padding-left: 30px;
+}
+
+.button:overlay {
+    background-color: rgb(255, 0, 0);
 }
