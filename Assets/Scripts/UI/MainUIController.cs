@@ -17,7 +17,7 @@ public class MainUIController : MonoBehaviour
     private VisualElement header;
     private VisualElement footer;
 
-    void Awake()
+    void OnEnable()
     {
         UIDocument = GetComponent<UIDocument>();
         root = UIDocument.rootVisualElement;

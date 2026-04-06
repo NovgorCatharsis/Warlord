@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 public class PlayerInputController : MonoBehaviour
 {
     public Vector2 mousePosition { get; private set; }
+    public Vector2 movementInputVector { get; private set; }
 
     public event Action RightClickPressed;
     public event Action LeftClickPressed;
@@ -28,5 +29,10 @@ public class PlayerInputController : MonoBehaviour
         {
             LeftClickPressed?.Invoke();
         }
+    }
+
+    private void OnMove(InputValue inputValue)
+    {
+        movementInputVector = inputValue.Get<Vector2>();
     }
 }

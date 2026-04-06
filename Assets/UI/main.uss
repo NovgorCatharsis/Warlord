@@ -17,6 +17,10 @@
 .panelText {
     font-size: 48px;
     color: rgb(255, 255, 255);
+    -unity-font-definition: url("project://database/Assets/UI/Fonts/RasterForgeRegular-JpBgm.ttf?fileID=12800000&guid=de466f507299eb747b5976645265178c&type=3#RasterForgeRegular-JpBgm");
+    -unity-text-align: upper-center;
+    -unity-text-outline-width: 2px;
+    -unity-text-outline-color: rgb(0, 0, 0);
 }
 
 .panelBackground {
@@ -35,6 +39,20 @@
     border-bottom-color: rgb(0, 0, 0);
 }
 
+.healthText {
+    font-size: 200px;
+    color: rgb(255, 0, 0);
+    align-content: auto;
+    align-items: auto;
+    justify-content: flex-start;
+    align-self: auto;
+    padding-left: 30px;
+    -unity-font-definition: url("project://database/Assets/UI/Fonts/RasterForgeRegular-JpBgm.ttf?fileID=12800000&guid=de466f507299eb747b5976645265178c&type=3#RasterForgeRegular-JpBgm");
+    -unity-text-outline-width: 2px;
+    -unity-text-align: upper-center;
+    -unity-text-outline-color: rgb(0, 0, 0);
+}
+
 .headerText {
     font-size: 36px;
     color: rgb(255, 255, 255);
@@ -43,8 +61,119 @@
     justify-content: flex-start;
     align-self: auto;
     padding-left: 30px;
+    -unity-font-definition: url("project://database/Assets/UI/Fonts/RasterForgeRegular-JpBgm.ttf?fileID=12800000&guid=de466f507299eb747b5976645265178c&type=3#RasterForgeRegular-JpBgm");
+    -unity-text-outline-width: 1px;
+    -unity-text-outline-color: rgb(0, 0, 0);
 }
 
-.button:overlay {
-    background-color: rgb(255, 0, 0);
+.bigText {
+    font-size: 36px;
+    color: rgb(255, 255, 255);
+    align-content: auto;
+    align-items: auto;
+    justify-content: flex-start;
+    align-self: auto;
+    padding-left: 30px;
+    -unity-font-definition: url("project://database/Assets/UI/Fonts/RasterForgeRegular-JpBgm.ttf?fileID=12800000&guid=de466f507299eb747b5976645265178c&type=3#RasterForgeRegular-JpBgm");
+    -unity-text-outline-width: 0;
+    -unity-text-outline-color: rgba(0, 0, 0, 0);
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+    -unity-text-align: upper-center;
+}
+
+.turnButton {
+    background-color: rgba(0, 0, 0, 0.95);
+    -unity-font-definition: url("project://database/Assets/UI/Fonts/RasterForgeRegular-JpBgm.ttf?fileID=12800000&guid=de466f507299eb747b5976645265178c&type=3#RasterForgeRegular-JpBgm");
+    color: rgb(255, 255, 255);
+    -unity-text-outline-width: 2px;
+    -unity-text-outline-color: rgb(0, 0, 0);
+    font-size: 48px;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    border-top-width: 3px;
+    border-right-width: 3px;
+    border-bottom-width: 3px;
+    border-left-width: 3px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.turnButton:hover {
+    background-color: rgba(38, 38, 38, 0.95);
+    -unity-font-definition: url("project://database/Assets/UI/Fonts/RasterForgeRegular-JpBgm.ttf?fileID=12800000&guid=de466f507299eb747b5976645265178c&type=3#RasterForgeRegular-JpBgm");
+    color: rgb(255, 255, 255);
+    -unity-text-outline-width: 2px;
+    -unity-text-outline-color: rgb(0, 0, 0);
+    font-size: 54px;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    border-top-width: 3px;
+    border-right-width: 3px;
+    border-bottom-width: 3px;
+    border-left-width: 3px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.menuButton {
+    background-color: rgb(192, 192, 192);
+    -unity-font-definition: url("project://database/Assets/UI/Fonts/RasterForgeRegular-JpBgm.ttf?fileID=12800000&guid=de466f507299eb747b5976645265178c&type=3#RasterForgeRegular-JpBgm");
+    color: rgb(243, 243, 243);
+    -unity-text-outline-width: 2px;
+    -unity-text-outline-color: rgb(0, 0, 0);
+    font-size: 48px;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    margin-bottom: 60px;
+}
+
+.menuButton:hover {
+    background-color: rgb(154, 154, 154);
+    -unity-font-definition: url("project://database/Assets/UI/Fonts/RasterForgeRegular-JpBgm.ttf?fileID=12800000&guid=de466f507299eb747b5976645265178c&type=3#RasterForgeRegular-JpBgm");
+    color: rgb(243, 243, 243);
+    -unity-text-outline-width: 2px;
+    -unity-text-outline-color: rgb(0, 0, 0);
+    font-size: 54px;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    margin-bottom: 60px;
 }

@@ -8,22 +8,33 @@ public class TileController : MonoBehaviour
     [SerializeField] public GameObject[] connectedTiles;
 
     private EntityController entityController;
-    private EnemyController enemyController;
-    private PlayerInputController playerInputController;
 
+    public GameObject building;
     public List<GameObject> unitsOnTile;
     public List<GameObject> enemiesOnTile;
+    public int[] unitsSlots;
+    public int[] enemiesSlots;
 
     public bool fightHappened;
-    private int unitsStrengthSum;
-    private int enemiesStrengthSum;
-    private int strengthDif;
+    public bool panelOpened;
+    public bool underControl;
+
+    private float unitsStrengthSum;
+    private float enemiesStrengthSum;
+    private float strengthDif;
     
 
     private void Awake()
     {
-        playerInputController = gameObject.GetComponent<PlayerInputController>();
         gameMasterSO.FirstPhaseInitiated += Fight;
+
+        unitsSlots = new int[3];
+        enemiesSlots = new int[3];
+        for (int i = 0; i < 3; i++)
+        {
+            unitsSlots[i] = 0;
+            enemiesSlots[i] = 0;
+        }
     }
     //private void Start()
     //{
@@ -33,11 +44,40 @@ public class TileController : MonoBehaviour
 
     public void Fight()
     {
-        Debug.Log("UNITS ON TILE " + gameObject.name + ": " + unitsOnTile.Count); 
-        Debug.Log("ENEMIES ON TILE " + gameObject.name + ": " + enemiesOnTile.Count);
+        //Debug.Log("UNITS ON TILE " + gameObject.name + ": " + unitsOnTile.Count);
+        //Debug.Log("ENEMIES ON TILE " + gameObject.name + ": " + enemiesOnTile.Count);
 
         fightHappened = false;
-        if (unitsOnTile.Count == 0 || enemiesOnTile.Count == 0) 
+        if (enemiesOnTile.Count != 0 && unitsOnTile.Count == 0) // Destroy building if there are enemies on tile but no units to defend it
+        {
+            LoseControl();
+            if (building != null)
+            {
+                if (!building.CompareTag("Fort"))
+                {
+                    building.GetComponent<BuildingController>().Destruction();
+                    building = null;
+                    fightHappened = true;
+                }
+            }
+        }
+        else if (unitsOnTile.Count != 0 && enemiesOnTile.Count == 0)
+        {
+            GetControl();
+            if (building != null)
+            {
+                if (building.CompareTag("Fort"))
+                {
+                    building.GetComponent<Fort>().Destruction();
+                    building = null;
+
+                    gameMasterSO.coins += 4;
+                    gameMasterSO.morale += 5;
+                }
+            }
+        }
+
+        if (unitsOnTile.Count == 0 || enemiesOnTile.Count == 0)
         {
             gameMasterSO.FightsCheck();
             return;
@@ -51,7 +91,7 @@ public class TileController : MonoBehaviour
         Debug.Log("TILE " + gameObject.name + " HAS A FIGHT");
         Debug.Log("UNITS STRENGTH  " + unitsStrengthSum);
         Debug.Log("ENEMIES STRENGTH  " + enemiesStrengthSum);
-        Debug.Log("STRENGTH DIF  " + strengthDif);
+        //Debug.Log("STRENGTH DIF  " + strengthDif);
 
         if (unitsStrengthSum > enemiesStrengthSum) { FightResult(unitsOnTile, enemiesOnTile); Debug.Log("UNITS WON"); } // (winners, losers) If units win
         else if (unitsStrengthSum < enemiesStrengthSum) { FightResult(enemiesOnTile, unitsOnTile); Debug.Log("ENEMIES WON"); } // (winners, losers) If enemies win
@@ -65,6 +105,9 @@ public class TileController : MonoBehaviour
 
     public void FightResult (List<GameObject> winners, List<GameObject> losers, bool isDraw = false)
     {
+        // IMPORNANT: HIGHER STRENGTH DIF WORKS DIFFERENTLY, HERE IT'S CHANGED WITH THIS ONE LINE
+        strengthDif = losers.Sum(e => e.GetComponent<EntityController>().strength);
+        Debug.Log("DEALT DAMAGE TO WINNERS " + strengthDif);
         List<GameObject> entities = (List<GameObject>)winners.Concat(losers).ToList();
 
         foreach (GameObject entity in entities)
@@ -99,5 +142,17 @@ public class TileController : MonoBehaviour
             }
             if (entityController.strength <= 0) entityController.Death(); // In case of lethal damage
         }
+    }
+
+    public void LoseControl() 
+    { 
+        underControl = false;
+        gameObject.GetComponent<MeshRenderer>().material = Resources.Load<Material>("Materials/Tiles/map_enemy");
+    }
+
+    public void GetControl()
+    {
+        underControl = true;
+        gameObject.GetComponent<MeshRenderer>().material = Resources.Load<Material>("Materials/Tiles/map_player");
     }
 }

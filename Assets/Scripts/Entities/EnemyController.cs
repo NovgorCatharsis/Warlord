@@ -22,6 +22,9 @@ public class EnemyController : EntityController
     {
         tileController.enemiesOnTile.Remove(gameObject);
         gameMasterSO.SecondPhaseInitiated -= Move;
+        gameMasterSO.SecondPhaseInitiated -= Heal;
+        gameMasterSO.SecondPhaseInitiated += MoveRestoration;
+        gameMasterSO.corpses += 1;
     }
 
     public void Move()
@@ -59,6 +62,7 @@ public class EnemyController : EntityController
         tilesAhead.Clear();
         tileController = currentTile.GetComponent<TileController>();
         
+        // OLD SYSTEM DEPENDENT ON ENEMIES COUNT. IF BUGS ARE NOTICED, CHANGE TO THE ONE FROM UNIT CONTROLLER
         switch (tileController.enemiesOnTile.Count()) // How many units on new tile
         {
             case 0:
@@ -70,8 +74,11 @@ public class EnemyController : EntityController
             case 2:
                 deltaZ = -0.5f;
                 break;
+            default:
+                Debug.Log("Too many enemies on tile, cannot move there.");
+                return;
         }
-        gameObject.transform.position = new Vector3(currentTile.transform.position.x + 0.5f, currentTile.transform.position.y + 0.62f, currentTile.transform.position.z);
+        gameObject.transform.position = new Vector3(currentTile.transform.position.x + 0.5f, currentTile.transform.position.y + 0.62f, currentTile.transform.position.z + deltaZ);
         tileController.enemiesOnTile.Add(gameObject);
     }
 }

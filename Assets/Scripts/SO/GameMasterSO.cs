@@ -21,8 +21,13 @@ public class GameMasterSO : ScriptableObject
 
     private void OnEnable() 
     {
+        coins = 0;
+        recruits = 0;
+        corpses = 0;
+        morale = 0;
+        selectedUnit = null;
         tilesNumber = GameObject.FindGameObjectsWithTag("Tile").Count();
-        ResourcesUpdated?.Invoke();
+        UpdateUI();  
         Debug.Log("TOTAL OF " + tilesNumber + " TILES");
     }
 
@@ -41,6 +46,8 @@ public class GameMasterSO : ScriptableObject
             Debug.Log("=================== ENEMIES NOW MOVING ===================");
             calculatedFights = 0;
             SecondPhaseInitiated?.Invoke();
+            Debug.Log("=================== ENEMIES NOW SPAWNING ===================");
+            Debug.Log("=================== ENTITIES NOW HEALING ===================");
             GatherIncome();
         }
     }
@@ -48,6 +55,11 @@ public class GameMasterSO : ScriptableObject
     {
         Debug.Log("=================== INCOME NOW BEING GATHERED ===================");
         ThirdPhaseInitiated?.Invoke();
+        UpdateUI();
+    }
+
+    public void UpdateUI()
+    {
         ResourcesUpdated?.Invoke();
     }
 }

@@ -1,0 +1,6 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/main.uss?fileID=7433441132597879392&amp;guid=bc35314d8151b4a42a452b25cbf28b2f&amp;type=3#main"/>
+    <ui:VisualElement name="Container" style="flex-grow: 1; align-self: auto; justify-content: center;">
+        <ui:Label text="0/0" name="healthLabel" class="healthText"/>
+    </ui:VisualElement>
+</ui:UXML>
