@@ -47,6 +47,11 @@ public class UnitsPanel : Panel
         {
             spawnedUnit = Instantiate(chosenUnit, new Vector3(tile.transform.position.x - 0.5f, tile.transform.position.y + 0.62f, tile.transform.position.z + deltaZ), Quaternion.Euler(0, 270, 0));
             spawnedUnit.GetComponent<UnitController>().currentSlot = slot;
+            AudioSource.PlayClipAtPoint(clickSound, Camera.main.transform.position, 1f);
+        }
+        else
+        {
+            AudioSource.PlayClipAtPoint(invalidClickSound, Camera.main.transform.position, 1f);
         }
     }
 }

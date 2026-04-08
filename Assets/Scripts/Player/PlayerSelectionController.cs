@@ -3,6 +3,9 @@ public class PlayerSelectionController : MonoBehaviour
 {
     [SerializeField] private GameMasterSO gameMasterSO;
     [SerializeField] private GameObject selectionPanel;
+    [SerializeField] private AudioClip clickSound;
+    [SerializeField] private AudioClip invalidClickSound;
+    [SerializeField] private AudioClip marchSound;
     private PlayerInputController playerInputController;
 
     private GameObject hitObject;
@@ -28,6 +31,7 @@ public class PlayerSelectionController : MonoBehaviour
         hitObject = Raycast();
         if (hitObject == null)
         {
+            AudioSource.PlayClipAtPoint(invalidClickSound, transform.position, 1f);
             return;
         }
 
@@ -43,6 +47,8 @@ public class PlayerSelectionController : MonoBehaviour
             {
                 tile.transform.Find("Highlight").gameObject.SetActive(true); // Highlight connected tiles
             }
+
+            AudioSource.PlayClipAtPoint(clickSound, Camera.main.transform.position, 1f);
         }
         else if (hitObject.CompareTag("Tile"))
         {
@@ -51,7 +57,9 @@ public class PlayerSelectionController : MonoBehaviour
                 hitObject.GetComponent<TileController>().panelOpened = true;
                 Instantiate(selectionPanel, new Vector3(hitObject.transform.position.x, hitObject.transform.position.y + 1.4f, hitObject.transform.position.z - 0.7f), Quaternion.Euler(45, 0, 0));
             }
-        }
+
+            AudioSource.PlayClipAtPoint(clickSound, Camera.main.transform.position, 1f);
+        }  
     }
 
     private void DeselectUnit() 
@@ -84,6 +92,7 @@ public class PlayerSelectionController : MonoBehaviour
 
         DeselectUnit();
         selectedUnit.GetComponent<UnitController>().Move(hitObject); //Move unit to tile
+        AudioSource.PlayClipAtPoint(marchSound, Camera.main.transform.position, 1f);
     }
 
 

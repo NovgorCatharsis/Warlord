@@ -69,5 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BuildingsPanel
   gameMasterSO: {fileID: 11400000, guid: 114aa348182996b44b115c120cd76a3f, type: 2}
+  clickSound: {fileID: 8300000, guid: fba5a32c45d641c49b80cac413149bbd, type: 3}
+  invalidClickSound: {fileID: 8300000, guid: dc47b89334acee945988c03ac800fb99, type: 3}
   house: {fileID: 3689982816835809265, guid: 4edacbf77e71ba04b8f385328154bcbe, type: 3}
   mine: {fileID: 3911318930800219686, guid: 7c8c96dae3e47294ebc8296e9258cb65, type: 3}

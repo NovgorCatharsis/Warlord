@@ -47,6 +47,11 @@ public class BuildingsPanel : Panel
         {
             builtBuilding = Instantiate(chosenBuilding, new Vector3(tile.transform.position.x, tile.transform.position.y, tile.transform.position.z), Quaternion.Euler(0,180,0));
             tileController.building = builtBuilding;
+            AudioSource.PlayClipAtPoint(clickSound, Camera.main.transform.position, 1f);
+        }
+        else 
+        {
+            AudioSource.PlayClipAtPoint(invalidClickSound, Camera.main.transform.position, 1f);
         }
     }
 }

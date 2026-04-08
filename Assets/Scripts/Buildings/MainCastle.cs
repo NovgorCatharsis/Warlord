@@ -8,6 +8,13 @@ public class MainCastle : BuildingController
     {
         loseScreen = Resources.Load<GameObject>("Prefabs/UI/Lose UIDocument");
     }
+    
+    private void Start()
+    {
+        gameMasterSO.Annul();
+        gameMasterSO.UpdateUI();
+    }
+
     public override void Destruction()
     {
         Instantiate(loseScreen);

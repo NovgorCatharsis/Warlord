@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 784cd43da52821447a183eb297d1d2a1, type: 3}
   m_Name: GameMasterSO
   m_EditorClassIdentifier: Assembly-CSharp::GameMasterSO
-  coins: 2
-  recruits: 18
+  bellSound: {fileID: 8300000, guid: 924e7963a1dd46d4dbe760f58f19ac22, type: 3}
+  coins: 0
+  recruits: 0
   corpses: 0
-  morale: 14
+  morale: 0
   selectedUnit: {fileID: 0}
-  tilesNumber: 4
-  calculatedFights: 0
+  tilesNumber: 20
+  calculatedFights: 1

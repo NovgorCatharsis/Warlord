@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BuildingController : MonoBehaviour
 {
-    [SerializeField] private GameMasterSO gameMasterSO;
+    [SerializeField] internal GameMasterSO gameMasterSO;
 
     [Header("Income")]
     [SerializeField] private int coinsIncome;

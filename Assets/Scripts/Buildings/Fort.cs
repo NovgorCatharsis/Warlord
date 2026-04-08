@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Fort : MonoBehaviour
 {
-    [SerializeField] private GameMasterSO gameMasterSO;
+    [SerializeField] internal GameMasterSO gameMasterSO;
     [SerializeField] private GameObject enemy;
     [SerializeField] private int spawnChance = 4; // Higher = lower
 

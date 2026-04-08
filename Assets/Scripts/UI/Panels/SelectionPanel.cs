@@ -25,18 +25,18 @@ public class SelectionPanel : Panel
 
     private void OpenUnitsPanel()
     {
+        AudioSource.PlayClipAtPoint(clickSound, Camera.main.transform.position, 1f);
         Instantiate(unitsPanel, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.Euler(panelRotation, 0, 0));
         Destroy(gameObject);
     }
 
     private void OpenBuildingsPanel()
     {
+        AudioSource.PlayClipAtPoint(clickSound, Camera.main.transform.position, 1f);
         Instantiate(buildingsPanel, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.Euler(panelRotation, 0, 0));
         Destroy(gameObject);
     }
 }
-
-
 
 
 

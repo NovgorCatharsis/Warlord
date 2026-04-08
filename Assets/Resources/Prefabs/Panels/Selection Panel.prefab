@@ -69,5 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::test
   gameMasterSO: {fileID: 11400000, guid: 114aa348182996b44b115c120cd76a3f, type: 2}
+  clickSound: {fileID: 8300000, guid: fba5a32c45d641c49b80cac413149bbd, type: 3}
+  invalidClickSound: {fileID: 8300000, guid: dc47b89334acee945988c03ac800fb99, type: 3}
   unitsPanel: {fileID: 3265012319134051954, guid: d2efbc11ae377f045a5b508a5f86aff3, type: 3}
   buildingsPanel: {fileID: 3265012319134051954, guid: f1239199335af2f43b90bf624e9b98f5, type: 3}

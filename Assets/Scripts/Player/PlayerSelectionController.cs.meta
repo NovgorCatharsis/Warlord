@@ -1,12 +1,13 @@
 fileFormatVersion: 2
-guid: d07bd6a93a243ae4389b396a4a327f02
+guid: bdd6f0a11e23d59439084882d91d9e1a
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
   - gameMasterSO: {fileID: 11400000, guid: 114aa348182996b44b115c120cd76a3f, type: 2}
+  - selectionPanel: {fileID: 289802268126941549, guid: 9414433a5cdee7a4e8d0405fdfaf69ea, type: 3}
   - clickSound: {fileID: 8300000, guid: fba5a32c45d641c49b80cac413149bbd, type: 3}
-  - invalidClickSound: {fileID: 8300000, guid: dc47b89334acee945988c03ac800fb99, type: 3}
+  - marchSound: {fileID: 8300000, guid: f9f41a9225aaeb64eaf0416aef3d4017, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

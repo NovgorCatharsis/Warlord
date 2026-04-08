@@ -24,7 +24,7 @@ public class TileController : MonoBehaviour
     private float strengthDif;
     
 
-    private void Awake()
+    void OnEnable()
     {
         gameMasterSO.FirstPhaseInitiated += Fight;
 
@@ -35,6 +35,11 @@ public class TileController : MonoBehaviour
             unitsSlots[i] = 0;
             enemiesSlots[i] = 0;
         }
+    }
+
+    void OnDisable()
+    {
+        gameMasterSO.FirstPhaseInitiated -= Fight;
     }
     //private void Start()
     //{
@@ -147,12 +152,12 @@ public class TileController : MonoBehaviour
     public void LoseControl() 
     { 
         underControl = false;
-        gameObject.GetComponent<MeshRenderer>().material = Resources.Load<Material>("Materials/Tiles/map_enemy");
+        if (gameObject) gameObject.GetComponent<MeshRenderer>().material = Resources.Load<Material>("Materials/Tiles/map_enemy");
     }
 
     public void GetControl()
     {
         underControl = true;
-        gameObject.GetComponent<MeshRenderer>().material = Resources.Load<Material>("Materials/Tiles/map_player");
+        if (gameObject) gameObject.GetComponent<MeshRenderer>().material = Resources.Load<Material>("Materials/Tiles/map_player");
     }
 }

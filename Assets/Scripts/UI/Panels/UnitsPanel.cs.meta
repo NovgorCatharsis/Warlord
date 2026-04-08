@@ -1,2 +1,16 @@
 fileFormatVersion: 2
 guid: 0d49b4fd04feb3349a7418ea3be438ba
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - gameMasterSO: {fileID: 11400000, guid: 114aa348182996b44b115c120cd76a3f, type: 2}
+  - clickSound: {fileID: 8300000, guid: fba5a32c45d641c49b80cac413149bbd, type: 3}
+  - invalidClickSound: {fileID: 8300000, guid: dc47b89334acee945988c03ac800fb99, type: 3}
+  - soldierUnit: {fileID: 3952194533878987152, guid: fc42f14e9a54c7a4a964e8263297bd93, type: 3}
+  - reanimatedSoldierUnit: {fileID: 3952194533878987152, guid: 94378d6e07a46fb458c11b05d2694e49, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

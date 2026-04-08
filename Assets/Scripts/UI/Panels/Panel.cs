@@ -6,6 +6,8 @@ using Button = UnityEngine.UIElements.Button;
 public class Panel : MonoBehaviour
 {
     [SerializeField] internal GameMasterSO gameMasterSO;
+    [SerializeField] internal AudioClip clickSound;
+    [SerializeField] internal AudioClip invalidClickSound;
 
     internal GameObject tile;
     internal TileController tileController;
@@ -104,12 +106,14 @@ public class Panel : MonoBehaviour
 
     internal void Return()
     {
+        AudioSource.PlayClipAtPoint(clickSound, Camera.main.transform.position, 1f);
         Instantiate(selectionPanel, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.Euler(panelRotation, 0, 0));
         Destroy(gameObject);
     }
 
     internal void Close()
     {
+        AudioSource.PlayClipAtPoint(clickSound, Camera.main.transform.position, 1f);
         tile = RaycastDown();
         if (tile != null && tile.CompareTag("Tile"))
         {
